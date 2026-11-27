@@ -16,5 +16,5 @@ export const handler=async(event)=>{
  if(/^\d{1,10}$/.test(b.category||''))params.set('category',b.category);
  url.search=params;
  }
- try{const r=await fetch(url,{headers:{'X-API-Key':key,'User-Agent':'FlipFinderPersonal/0.3'},signal:AbortSignal.timeout(24000)});const d=await r.json();return reply(r.status,d)}catch{return reply(502,{error:'Provider unavailable or timed out. Check usage before retrying.'})}
+ try{const r=await fetch(url,{headers:{'X-API-Key':key,'User-Agent':'FlipFinderPersonal/0.4'},signal:AbortSignal.timeout(24000)});const d=await r.json();return reply(r.status,d)}catch{return reply(502,{error:'Provider unavailable or timed out. Check usage before retrying.'})}
 };
